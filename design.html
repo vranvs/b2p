@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta charset="UTF-8">
+    <title>bro2pro - NA</title>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/js.js"></script>
+</head>
+<body>
+
+<div id="banner">
+    <div id="bannerContainer">
+        <div id="logoContainer"></div>
+        <div id="btnContainer">
+            <div id="btn_algorithm"></div>
+            <div id="btn_info"></div>
+            <div id="btn_contact"></div>
+            <div id="btn_patch"></div>
+        </div>
+    </div>
+</div>
+
+    <div id="gridLimits">
+
+        <input type="text" id="nameInput" autocomplete="off" placeholder="enter summoner name"/>
+
+        <div id="placeHolderDiv">
+            <span class="returnInfoText"><strong>Your performance over 10 ranked games (5v5)</strong></span>
+            <div id="graphContainer">
+                <canvas id="canvas"></canvas>
+            </div>
+
+        </div>
+
+        <div id="scoreContainer">
+            <div id="scoreHeader"></div>
+            <div id="p2bScoreContainer">
+                <span class="bigScore">0.00</span>
+            </div>
+
+            <div class="scoreDivider"></div>
+            <div class="infoHolder">
+                <span class="infoText">league tier</span> <br/>
+                <span id="span_infoTier" class="returnInfoText">N/A</span>
+            </div>
+
+            <div class="scoreDivider"></div>
+            <div class="infoHolder">
+                <span class="infoText">league division</span> <br/>
+                <span id="span_infoDivision" class="returnInfoText">N/A</span>
+            </div>
+
+            <div class="scoreDivider"></div>
+            <div class="infoHolder">
+                <span class="infoText">league points</span> <br/>
+                <span id="span_infoPoints" class="returnInfoText">N/A</span>
+            </div>
+
+            <div class="scoreDivider"></div>
+            <div class="infoHolder">
+                <span class="infoText">win / loss ratio</span> <br/>
+                <span id="span_infoRatio" class="returnInfoText">N/A</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="breakdownContainer">
+        <div id="championBoxContainer">
+            <div class="gameContainer">
+                <div class="championBox"></div>
+                <div class="breakdownPullout">
+                    <br/>
+                    <span class="infoText">pvp factor</span><br/>
+                    <span id="a_pvp" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">pve factor</span><br/>
+                    <span id="a_pve" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">aux factor</span><br/>
+                    <span id="a_aux" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">p2b score</span><br/>
+                    <span id="a_total" class="returnInfoText">N/A</span> <br/><br/>
+
+                </div>
+            </div>
+
+            <div class="gameContainer">
+                <div class="championBox"></div>
+                <div class="breakdownPullout">
+                    <br/>
+                    <span class="infoText">pvp factor</span><br/>
+                    <span id="b_pvp" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">pve factor</span><br/>
+                    <span id="b_pve" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">aux factor</span><br/>
+                    <span id="b_aux" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">p2b score</span><br/>
+                    <span id="b_total" class="returnInfoText">N/A</span> <br/><br/>
+
+                </div>
+            </div>
+
+            <div class="gameContainer">
+                <div class="championBox"></div>
+                <div class="breakdownPullout">
+                    <br/>
+                    <span class="infoText">pvp factor</span><br/>
+                    <span id="c_pvp" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">pve factor</span><br/>
+                    <span id="c_pve" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">aux factor</span><br/>
+                    <span id="c_aux" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">p2b score</span><br/>
+                    <span id="c_total" class="returnInfoText">N/A</span> <br/><br/>
+
+                </div>
+            </div>
+
+            <div class="gameContainer">
+                <div class="championBox"></div>
+                <div class="breakdownPullout">
+                    <br/>
+                    <span class="infoText">pvp factor</span><br/>
+                    <span id="d_pvp" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">pve factor</span><br/>
+                    <span id="d_pve" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">aux factor</span><br/>
+                    <span id="d_aux" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">p2b score</span><br/>
+                    <span id="d_total" class="returnInfoText">N/A</span> <br/><br/>
+
+                </div>
+            </div>
+
+            <div class="gameContainer">
+                <div class="championBox"></div>
+                <div class="breakdownPullout">
+                    <br/>
+                    <span class="infoText">pvp factor</span><br/>
+                    <span id="e_pvp" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">pve factor</span><br/>
+                    <span id="e_pve" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">aux factor</span><br/>
+                    <span id="e_aux" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">p2b score</span><br/>
+                    <span id="e_total" class="returnInfoText">N/A</span> <br/><br/>
+
+                </div>
+            </div>
+
+            <div class="gameContainer">
+                <div class="championBox"></div>
+                <div class="breakdownPullout">
+                    <br/>
+                    <span class="infoText">pvp factor</span><br/>
+                    <span id="f_pvp" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">pve factor</span><br/>
+                    <span id="f_pve" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">aux factor</span><br/>
+                    <span id="f_aux" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">p2b score</span><br/>
+                    <span id="f_total" class="returnInfoText">N/A</span> <br/><br/>
+
+                </div>
+            </div>
+
+            <div class="gameContainer">
+                <div class="championBox"></div>
+                <div class="breakdownPullout">
+                    <br/>
+                    <span class="infoText">pvp factor</span><br/>
+                    <span id="g_pvp" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">pve factor</span><br/>
+                    <span id="g_pve" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">aux factor</span><br/>
+                    <span id="g_aux" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">p2b score</span><br/>
+                    <span id="g_total" class="returnInfoText">N/A</span> <br/><br/>
+
+                </div>
+            </div>
+
+            <div class="gameContainer">
+                <div class="championBox"></div>
+                <div class="breakdownPullout">
+                    <br/>
+                    <span class="infoText">pvp factor</span><br/>
+                    <span id="h_pvp" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">pve factor</span><br/>
+                    <span id="h_pve" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">aux factor</span><br/>
+                    <span id="h_aux" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">p2b score</span><br/>
+                    <span id="h_total" class="returnInfoText">N/A</span> <br/><br/>
+
+                </div>
+            </div>
+
+            <div class="gameContainer">
+                <div class="championBox"></div>
+                <div class="breakdownPullout">
+                    <br/>
+                    <span class="infoText">pvp factor</span><br/>
+                    <span id="i_pvp" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">pve factor</span><br/>
+                    <span id="i_pve" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">aux factor</span><br/>
+                    <span id="i_aux" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">p2b score</span><br/>
+                    <span id="i_total" class="returnInfoText">N/A</span> <br/><br/>
+
+                </div>
+            </div>
+
+            <div class="gameContainer">
+                <div class="championBox"></div>
+                <div class="breakdownPullout">
+                    <br/>
+                    <span class="infoText">pvp factor</span><br/>
+                    <span id="j_pvp" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">pve factor</span><br/>
+                    <span id="j_pve" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">aux factor</span><br/>
+                    <span id="j_aux" class="returnInfoText">N/A</span> <br/><br/>
+
+                    <span class="infoText">p2b score</span><br/>
+                    <span id="j_total" class="returnInfoText">N/A</span> <br/><br/>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="projectionContainer">
+            <div class="scoreDivider"></div>
+            <div id="projectionHeader"></div>
+            <div id="projectionContent">
+                <br/>
+                <span class="infoText">division advancement projection:</span><br/>
+                <span class="returnInfoText">UNAVAILABLE</span>
+            </div>
+            <div class="scoreDivider"></div>
+            <form id="bugReport">
+                <textarea placeholder="Bug report / suggestion box"></textarea>
+                <br/>
+                <button class="sendButton" type="submit">send</button>
+            </form>
+        </div>
+    </div>
+
+<div class="popupContainer" id="contactDiv">
+    <br/>
+    <span class="returnInfoText">General Inquiries:</span><br/>
+    <span class="infoText">swive@bro2pro.net</span><br/><br/>
+    <span class="returnInfoText">Bug reports:</span><br/>
+    <span class="infoText">vranvs@bro2pro.net</span>
+</div>
+
+<div class="popupContainer" id="patchDiv">
+    <br/>
+    <span class="returnInfoText">Patch Notes (v2.0.1)</span><br/>
+    <span class="infoText">-Updated UI<br/>-Introduced Patch Notes (lol)<br/>-Secured Backend</span>
+</div>
+
+<div class="popupContainer" id="noSummoner">
+    <span class="returnInfoText">!SUMMONER COULD NOT BE FOUND!</span><br/>
+    <span class="infoText">Click outside of this dialogue to close.</span>
+</div>
+
+<div class="popupContainer" id="noGamesDiv">
+    <span class="returnInfoText">!SUMMONER HAS NOT PLAYED AT LEAST 10 RANKED 5v5 GAMES!</span><br/>
+    <span class="infoText">b2p is a tool that is used to meter, gauge, and improve your playstyle. Therefore we only use ranked games which provide the most reliable statistics which reflect when a player is truly "trying".</span>
+</div>
+
+<div id="fadeDiv"></div>
+</body>
+</html>
